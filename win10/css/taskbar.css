@@ -1,0 +1,88 @@
+/* 任务栏 */
+#taskbar{
+	width: 100%;
+	height: 4.44%;
+	background-color: #000000;
+}
+#taskbar img{
+	vertical-align: middle;
+}
+/* 开始按钮 */
+#barstart{
+	width: 56px;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+}
+#barstart:hover{
+	background-color: rgba(160,160,160,.4);
+}
+/* 任务缩略按钮 */
+#taskview{
+	width: 56px;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	position: relative;
+}
+#taskview:hover{
+	background-color: rgba(160,160,160,.4);
+}
+#taskbox{
+	width: 1200px;
+	height: 200px;
+	position: absolute;
+	top: -204px;
+	left: -45px;
+	display: none;
+}
+#taskbox ul{
+	float: left;
+	border: 2px solid rgba(137,137,137,.8);
+	background-color: rgba(0,0,0,.5);
+}
+#taskbox li{
+	float: left;
+	width: 256px;
+	height: 194px;
+	border: 2px solid rgba(191,191,191,0);
+}
+#taskview span{
+	float: left;
+}
+#taskview i{
+	font-size: 24px;
+	font-weight: bold;
+	float: right;
+	cursor: pointer;
+}
+/* 任务缩略图移入高亮 */
+#taskbar li:hover{
+	background-color: rgba(160,160,160,.4);
+}
+
+#onetask li{
+	float: left;
+	width: 40px;
+	height: 100%;
+	line-height: 40px;
+	text-align: center;
+}
+#righttask li{
+	float: left;
+	width: 26px;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+}
+#righttask #bartime{
+	width: 74px;
+	font-size: 8px;
+	color: #fff;
+	font-weight: 500;
+}
+#bartime p{
+	height: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+}

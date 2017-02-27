@@ -1,0 +1,720 @@
+body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #fafafa;
+}
+/* 标题飞出页面 并隐藏 */
+h1,h2{
+	text-indent: -2000px;
+	overflow: hidden; 
+}
+/*页面右边的索引*/
+#list{
+	position: fixed;
+	right: 20px;
+	top: 300px;
+	width: 30px;
+	z-index: 3000;
+}
+#list li{
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #ccc;
+	margin-bottom: 10px;
+}
+#list .active{
+	background: #4169e1;
+}
+/* 脚注 固定在页面下方 */
+footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+/*通过JS调整透明度 有一个渐出的效果*/
+	transition: 5s;
+	opacity: 0;
+}
+#litlog{
+	margin-right: 20px;
+	width: 100%;
+	text-align: right;
+}
+#litlog img{
+	width: 130px;
+	height: 31px;
+}
+#litlog a{
+	margin-right: 30px;
+}
+/* 左下角 版权年份*/
+#copyRight{
+	text-indent: 20px;
+}
+/* 右下角导航 */
+#bar-list{
+	margin-right: 20px;
+}
+#bar-list li{
+	float: left;
+}
+#bar-list .bar-text a{
+	padding: 0 5px;
+}
+#bar-list .line{
+	border-right: 1px solid #515151;
+	height: 14px;
+}
+/* 第一个页面的样式 */
+.page{
+	position: absolute;
+	width: 1024px;
+	height: 638px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+/*#p1,#p2,#p3{display: none;}*/
+#p1,#p2,#p3,#p4{visibility: hidden;perspective: 1000px;z-index: 1000;}
+/* 第一个页面中 顶部logo 和 下载按钮的框子 */
+#p1-top{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 48px;
+	left: 106px;
+}
+/* 第一个页面中的logo  */
+#p1-head{
+	position: absolute;
+	width: 313px;
+	height: 46px;
+	background: url('../images/title2_1.png') no-repeat;
+/*通过JS调整透明度 有一个渐出的效果*/
+	opacity: 0;
+	transition: 1.5s;
+}
+/* 第一个页面中的版本下载按钮 */
+#p1-a{
+	position: absolute;
+	top: -10px;
+	right: 195px;
+/*通过JS调整透明度 有一个渐出的效果*/
+	opacity: 0;
+	transition: 3.5s;
+}
+/* 第一个页面中间图片内容 */
+#p1-mid{
+	position: absolute;
+	left: 100px;
+	top: 200px;
+	width: 100%;
+	perspective: 1000px;
+}
+/* 中间内容的两张图片 */
+#p1-mid div{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	opacity: 0;
+	transform: translate3d(-240px,-150px,900px) scale(0.7);
+	transition: 2s;
+}
+#p1-pic1{
+	height: 98px;
+	background: url(../images/skin.png) no-repeat;
+}
+#p1-pic2{
+	height: 320px;
+	background: url(../images/skin.gif) no-repeat;
+}
+/* 滚动一下 看一看的框子 */
+#p1-click{
+	position: absolute;
+	left: 42%;
+	bottom: 8%;
+	z-index: 10;
+}
+#p1-click a{
+	font-weight: bold;
+}
+/* 下面span 用标签写的小三角 */
+#p1-click span{
+	cursor: pointer;
+	position: absolute;
+	border-width: 10px;
+	border-style: solid;
+	
+}
+#p1-click span:nth-of-type(1){
+	top: 28px;
+	left: 50px;
+	border-color: #666 transparent transparent transparent;
+}
+#p1-click span:nth-of-type(2){
+	top: 26px;
+	left: 50px;
+	border-color: #fff transparent transparent transparent;
+}
+
+/*第二个页面*/
+ #p2-head{
+	position: absolute;
+	left: -150px;
+	top: 20px;
+	height: 40px;
+	z-index: 10;
+	transition: 2s;
+	opacity: 0;
+} 
+
+#p2-fly{
+	position: absolute;
+	width: 381px;
+	height: 381px;
+	left: -200px;
+	top: 0;
+	perspective: 1000px;
+}
+#p2-fly div{
+	transform: translate3d(0px,500px,-1000px) rotateY(88deg) scale(.6);
+	opacity: 0;
+	transition: 3s;
+}
+#p2-fly img{
+	position: absolute;
+}
+#p2-mid{
+	width: 100%;
+	height: 100%;
+	margin-top: 80px;
+	perspective: 1000px;
+}
+#p2-mid div{
+	width: 100%;
+	text-align: center;
+	transform: translate3d(0,0,-1000px) scale(.2);
+	opacity: 0;
+	transition: 2s;
+}
+#p2-mid div:last-child{
+	margin-top: 20px;
+}
+#p2-mid img{
+	vertical-align: center;
+}
+/* 第三个页面 */
+#p3-head{
+	position: absolute;
+	left: -150px;
+	top: 20px;
+	height: 40px;
+	z-index: 10;
+	transition: 2s;
+	opacity: 1;
+}
+#p3-box{
+	position: absolute;
+    width: 1440px;
+    height: 768px;
+    top: 50%;
+    left: 50%;
+    margin-left: -270px;
+    margin-top: -284px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transform: translateZ(1200px) rotateX(120deg);/*-50px 30*/
+    opacity: 1;
+    transition: 1.5s;
+}
+/* 从下往上走出去的位置 */
+#p3 .p3boxs{
+	transform: translateZ(1200px) rotateX(120deg);
+}
+/* 正常的位置 */
+#p3 .p3boxd{
+	 transform: translateZ(-50px) rotateX(30deg);
+}
+/* 从上往下走出去的位置 */
+#p3 .p3boxu{
+	 transform: translateZ(-200px) rotateY(-45deg) translateX(3000px);
+}
+#p3tab{
+	position: absolute;
+	left: 10px;
+	top: -20px;
+	width: 435px;
+	height: 72px;
+	transform: translateZ(100px);
+}
+#p3shadow{
+	position: absolute;
+	left: -46px;
+	top: -18px;
+	width: 510px;
+	height: 178px;
+	transform: translateZ(50px);
+}
+#p3bar{
+	width: 100%;
+	height: 100px;
+	margin-top: 120px;
+	background: rgba(0,0,0,0.05);
+}
+#p3bar img:nth-of-type(1){
+	margin: 30px 20px 30px 40px;
+}
+#p3bar img:nth-of-type(2){
+	margin: 30px;
+}
+#p3bar img:nth-of-type(3){
+	margin: 30px 20px;
+}
+#p3text{
+	position: absolute;
+	width: 465px;
+	height: 100px;
+	left: 95px;
+	top: 325px;
+	transition: 1.5s;
+}
+/* 进来时的位置 正常位置清空class */
+.p3pic{
+	transform: translateZ(2000px) rotateX(20deg);
+}
+/* 出去时的位置 */
+.p3picgo{
+	transform:  rotateY(-60deg) translateZ(2000px);
+}
+#p3txt{
+	position: absolute;
+	width: 800px;
+	height: 91px;
+	left: 95px;
+	top: 450px;
+	font-size: 16px;
+	font-family: "微软雅黑"; 
+	opacity: 0;
+	transition: 1.5s;
+}
+/*第四个页面*/
+#p4mid{
+	width: 200px;
+	height: 200px;
+	perspective: 1000px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -100px;
+}
+
+
+#p4pic1{
+	position: absolute;
+	width: 172px;
+	height: 172px;
+	background: url("../images/p2pop1.png");
+	top: 50%;
+	left: 50%;
+	margin-left: -236px;
+	margin-top: -286px;
+	transition: 1.5s;
+}
+/* 进去时的位置 */
+#p4 .p4pic0{
+	opacity: 1;
+    transform: rotateY(-60deg) translateZ(800px) rotateX(120deg) scale(0.1);
+}
+/* 出去时的位置 以下四个图片 一样*/
+#p4 .p4picout0{
+	opacity: 1;
+    transform: rotateY(30deg) translateZ(1300px) rotateX(-180deg) scale(0.1);
+}
+#p4pic2{
+	position: absolute;
+	width: 73px;
+	height: 73px;
+	background: url("../images/p2pop2.png");
+	top: 50%;
+    left: 50%;
+    margin-left: -226.5px;
+	transition: 1.5s;
+    margin-top: -56.5px;
+}
+#p4 .p4pic1{
+	opacity: 1;
+    transform: rotateY(-60deg) translateZ(900px) rotateX(120deg) scale(0.1);
+}
+#p4 .p4picout1{
+	opacity: 1;
+    transform: rotateY(30deg) translateZ(1400px) rotateX(-180deg) scale(0.1);
+}
+#p4pic3{
+	position: absolute;
+	width: 337px;
+	height: 337px;
+	background: url("../images/p2pop3.png");
+	top: 50%;
+    left: 50%;
+    margin-left: -198.5px;
+	transition: 1.5s;
+    margin-top: -288.5px;
+}
+#p4 .p4pic2{
+	opacity: 1;
+    transform: rotateY(-60deg) translateZ(1000px) rotateX(120deg) scale(0.1);
+}
+#p4 .p4picout2{
+	opacity: 1;
+    transform: rotateY(30deg) translateZ(1500px) rotateX(-180deg) scale(0.1);
+}
+#p4pic4{
+	position: absolute;
+	width: 269px;
+	height: 269px;
+	background: url("../images/p2pop4.png");
+	top: 50%;
+    left: 50%;
+    margin-left: 75.5px;
+	transition: 1.5s;
+    margin-top: -254.5px;
+}
+#p4 .p4pic3{
+	opacity: 1;
+    transform: rotateY(-60deg) translateZ(1100px) rotateX(120deg) scale(0.1);
+}
+#p4 .p4picout3{
+	opacity: 1;
+    transform: rotateY(30deg) translateZ(1600px) rotateX(-180deg) scale(0.1);
+}
+/*第四面文字图片*/
+#p4txt{
+	position: absolute;
+    width: 390px;
+    height: 86px;
+    top: 50%;
+    left: 50%;
+    margin-left: -195px;
+    margin-top: 37px;
+	transition: 1.5s;
+    background: url("../images/p2t1.png");
+}
+/* 进去时的位置  正常位置 清空class*/
+#p4 .p4txt{
+	opacity: 0;
+	transform:  rotateY(-60deg) translateZ(800px);
+}
+/* 出去时的位置 */
+#p4 .p4txtout{
+	opacity: 1;
+    visibility: visible;
+    transform: rotateY(30deg) translateZ(1100px) rotateX(-30deg);
+}
+/*第四面文字*/
+ #p4con{
+	position: absolute;
+    width: 514px;
+    height: 136px;
+    top: 50%;
+    left: 50%;
+    margin-left: -257px;
+	transition: 1.5s;
+    margin-top: 92px;
+}
+#p4 .p4con{
+	opacity: 0;
+}
+#p4con div{
+	font-family: "微软雅黑";
+    position: absolute;
+    width: 600px;
+    left: 50%;
+    top: 50px;
+    margin-left: -300px;
+    font-size: 16px;
+    line-height: 2em;
+    text-align: center;
+} 
+/*--------------------------------------------------------------*/
+@-webkit-keyframes orbloop {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes orbloop {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes orbmove {
+  from {
+    -webkit-transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-2000px);
+  }
+}
+@keyframes orbmove {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-2000px);
+  }
+}
+#bg {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  top: 50%;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: -500px;
+  z-index: -100;
+}
+#bg div div {
+  position: absolute;
+}
+#bg {
+  opacity: 0;
+}
+#bg .row1 div {
+  -webkit-animation: orbmove 48s linear infinite;
+  animation: orbmove 96s linear infinite;
+}
+#bg .row1 .orb1 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -380px;
+}
+#bg .row1 .orb1 div {
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row1 .orb2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: 450px;
+  margin-top: 50px;
+}
+#bg .row1 .orb2 div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row1 .orb1c {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  margin-left: 1970px;
+  margin-top: -380px;
+}
+#bg .row1 .orb1c div {
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row1 .orb2c {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: 2450px;
+  margin-top: 50px;
+}
+#bg .row1 .orb2c div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row2 div {
+  -webkit-animation: orbmove 24s linear infinite;
+  animation: orbmove 48s linear infinite;
+}
+#bg .row2 .orb1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: -300px;
+}
+#bg .row2 .orb1 div {
+  width: 100%;
+  height: 100%;
+  border-radius: 200px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row2 .orb2 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  margin-left: 175px;
+  margin-top: -125px;
+}
+#bg .row2 .orb2 div {
+  width: 100%;
+  height: 100%;
+  border-radius: 250px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row2 .orb1c {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-left: 1500px;
+  margin-top: -300px;
+}
+#bg .row2 .orb1c div {
+  width: 100%;
+  height: 100%;
+  border-radius: 200px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row2 .orb2c {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  margin-left: 2100px;
+  margin-top: -200px;
+}
+#bg .row2 .orb2c div {
+  width: 100%;
+  height: 100%;
+  border-radius: 400px;
+  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row3 div {
+  -webkit-animation: orbmove 12s linear infinite;
+  animation: orbmove 24s linear infinite;
+}
+#bg .row3 .orb1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-left: 850px;
+  margin-top: -300px;
+}
+#bg .row3 .orb1 div {
+  width: 100%;
+  height: 100%;
+  border-radius: 300px;
+  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+  background: linear-gradient(to bottom, #dedede, #ffffff);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row3 .orb2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+#bg .row3 .orb2 div {
+  width: 100%;
+  height: 100%;
+  border-radius: 600px;
+  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+  background: linear-gradient(to bottom, #dedede, #ffffff);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row3 .orb1c {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-left: 2850px;
+  margin-top: -300px;
+}
+#bg .row3 .orb1c div {
+  width: 100%;
+  height: 100%;
+  border-radius: 300px;
+  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+  background: linear-gradient(to bottom, #dedede, #ffffff);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}
+#bg .row3 .orb2c {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  margin-left: 2000px;
+  margin-top: 0px;
+}
+#bg .row3 .orb2c div {
+  width: 100%;
+  height: 100%;
+  border-radius: 600px;
+  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+  background: linear-gradient(to bottom, #dedede, #ffffff);
+  -webkit-animation: orbloop 6s linear infinite;
+  animation: orbloop 6s linear infinite;
+}

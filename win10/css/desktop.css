@@ -1,0 +1,186 @@
+/*桌面的样式*/
+#main{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#desktop{
+	width: 100%;
+	height: 95.56%;
+	background: url(../img/desktopbg/waterbg.png) no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+/*#deskicon 装桌面图标的ul 每个li一个图标*/
+#deskicon{
+	float:left;
+	width: 100%;
+	height: 100%;
+}
+/* 结构是一个li里一个div包着图标图片，下面一个P标签装文字 方便*/
+#deskicon li{
+	width: 104px;
+	height: 104px;
+	position: absolute;
+}
+#deskicon div{
+	width: 80px;
+	height: 78px;
+	text-align: center;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#deskicon img{
+	width: 79px;
+	height: 82px;
+	vertical-align: middle;
+	margin-top: 10px;
+}
+#deskicon li:nth-of-type(1) img{
+	height: 70px;
+}
+#deskicon p{
+	height: 22px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+}
+#deskicon input{
+	width: 104px;
+	height: 22px;
+	display: none;
+}
+#deskicon li.active{
+	background-image: url(../img/desticon/checkedbg.png);
+}
+
+.samemenu{
+	position: absolute;
+	top: 20px;
+	right: 100px;
+	width: 160px;
+	height: 120px;
+	border: 2px solid #999a9b;
+	border-radius: 2px;
+	background: rgba(255,255,255,.8);
+	padding-top: 5px;
+	display: none;
+}
+.samemenu li{
+	width: 100%;
+	height: 38px;
+	text-indent: 50px;
+	font: 14px/41px "微软雅黑";
+	font-weight: 600;
+	color: #676767;
+	position: relative;
+}
+.samemenu li:hover{
+	background-color: rgba(160,160,160,.4);
+}
+/* 框选用的框子*/
+#oBox{
+	position: absolute;
+	border: 1px dotted #000;
+	display: none;
+}
+
+/* 文件夹右键菜单栏 */
+#foldermenu{
+	position: absolute;
+	top: 20px;
+	right: 100px;
+	width: 160px;
+	height: 120px;
+	border: 2px solid #999a9b;
+	border-radius: 2px;
+	background: rgba(255,255,255,.8);
+	padding-top: 5px;
+	z-index: 10;
+	display: none;
+}
+#foldermenu li{
+	width: 100%;
+	height: 38px;
+	text-indent: 50px;
+	font: 14px/41px "微软雅黑";
+	font-weight: 600;
+	color: #676767;
+	position: relative;
+}
+#foldermenu li:hover{
+	background-color: rgba(160,160,160,.4);
+}
+#icmenu{
+	height: 80px;
+}
+/* canvas画的时钟 */
+#main #canvas{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#introduction{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 20px;
+	width: 700px;
+	height: 690px;
+	border-radius: 30px;
+	background: rgba(9,10,67,.8);
+	color: #fff;
+}
+#introduction h3{
+	font-size: 24px;
+	margin-top: 14px;
+}
+#introduction li,#introduction p{
+	font-size: 16px;
+	text-indent: 2em;
+	line-height: 30px;
+}
+#introduction i{
+	position: absolute;
+	right: 20px;
+	top: -8px;
+	width: 20px;
+	height: 20px;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#brow{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	z-index: 100;
+	display: none;
+	background: #fff;
+}
+#brow div{
+	height: 3%;
+	background:red;
+}
+#brow input{
+	font-size: 20px;
+	width: 100%;
+	height: 100%;
+}
+#brow i{
+	position: absolute;
+	right: 0;
+	top: -12px;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#brow iframe{
+	width: 100%;
+	height: 99%;
+}

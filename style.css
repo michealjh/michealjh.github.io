@@ -1,0 +1,461 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft yahei";
+}
+.heading h2 span{
+    display: inline-block;
+    width: 150px;
+    border-bottom: 2px solid #666;
+    padding-bottom: 5px;
+}
+.heading h4{
+    padding-top: 5px;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.layer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 1s ease;
+}
+.section_wrap{
+   transition:transform 1s cubic-bezier(0.86,0,0.03,1);
+    -webkit-transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);
+}
+
+
+.put_section_0{ transform:translateY(0);-webkit-transform:translateY(0);}
+.put_section_1{ transform:translateY(-600px);-webkit-transform:translateY(-600px);}
+.put_section_2{ transform:translateY(-1200px);-webkit-transform:translateY(-1200px);}
+.put_section_3{ transform:translateY(-1800px);-webkit-transform:translateY(-1800px);}
+.put_section_4{ transform:translateY(-2400px);-webkit-transform:translateY(-2400px);}
+
+
+.put_header_0{ transform:translateY(0);-webkit-transform:translateY(0);}
+.put_header_1{ transform:translateY(600px);-webkit-transform:translateY(600px);}
+.put_header_2{ transform:translateY(1200px);-webkit-transform:translateY(1200px);}
+.put_header_3{ transform:translateY(1800px);-webkit-transform:translateY(1800px);}
+.put_header_4{ transform:translateY(2400px);-webkit-transform:translateY(2400px);}
+
+.on{
+    background: #2C3C4E;
+}
+
+.header{
+    background: #344860;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    position: fixed;
+    z-index: 5;
+    top: -60px;
+    transition:transform 1s cubic-bezier(0.86,0,0.03,1);
+    -webkit-transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);
+}
+.header_on{
+    position: fixed;
+    top:0px;
+}
+.header_nav{
+    min-width: 960px;
+    display: inline-block;
+}
+.logo{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin-right: 100px;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    float: left;
+    margin: 4px 20px 0  0;
+}
+.logo_h{
+    line-height: 30px;
+    color: #ccc;
+    float: left;
+}
+#logo_h_2{
+    border-top: 1px solid #ccc;
+}
+.header_nav a{
+    display: inline-block;
+    padding: 0px 50px;
+    line-height: 60px;
+    text-decoration: none;
+    color: #ccc;
+}
+.header_nav a:hover{
+    background: #2C3C4E;
+}
+
+.section1{
+    width: 100%;
+    height: 650px;
+    background: #344860 url("http://i3.piimg.com/b3a2d5c02ee57377.png") no-repeat  center;
+    background-size: cover;
+    border-top: 1px solid;
+    position: relative;
+}
+.section1_cont{
+    width: 400px;
+    margin: 100px auto;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ccc;
+}
+.myphoto{
+    width: 160px;
+    height: 160px;
+    border: 4px solid #ccc;
+    border-radius: 50%;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.myphoto img{
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    transition: 0.5s linear;
+    width: 100%;
+    height: 100%;
+}
+.myphoto:hover #myphoto1{
+    -webkit-animation:animation2 0.5s linear alternate both;
+    -moz-animation:animation2 0.5s linear;
+    -o-animation:animation2 0.5s linear;
+    -ms-animation:animation2 0.5s linear;
+    animation:animation2 0.5s linear alternate both;
+}
+.myphoto:hover #myphoto2{
+    -webkit-animation:animation3 1s linear alternate both;
+    -moz-animation:animation3 1s linear;
+    -o-animation:animation3 1s linear;
+    -ms-animation:animation3 1s linear;
+    animation:animation3 1s linear alternate both;
+}
+#myphoto2{
+    -webkit-transform:rotateY(90deg);
+}
+@-webkit-keyframes animation2{
+    100%{-webkit-transform:rotateY(90deg);}
+}
+@-webkit-keyframes animation3{
+    50%{-webkit-transform:rotateY(90deg);}
+    100%{-webkit-transform:rotateY(0deg);}
+}
+
+.who{
+    font-size: 20px;
+    margin: 5px 0;
+}
+.name{
+    font-size: 70px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.www{
+    font-size: 30px;
+    margin: 5px 0;
+}
+.section1_nav{
+    width: 100%;
+    height: 60px;
+    background:#344860 ;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
+.section1_nav a{
+    display: inline-block;
+    padding: 0px 50px;
+    line-height: 60px;
+    text-decoration: none;
+    color: #ccc;
+}
+.section1_nav a:hover{
+    background: #2C3C4E;
+    color: #fff;
+}
+
+        .section1_mouse{
+            display: block;
+            width: 50px;
+            height: 65px;
+            margin: 0 auto;
+            background: url("http://i2.piimg.com/183ad580c7ca9c0e.png") no-repeat center;
+            -webkit-animation:animations 1.5s ease infinite alternate;
+            -moz-animation:animations 1.5s ease infinite alternate;
+            -o-animation:animations 1.5s ease infinite alternate;
+            -ms-animation:animations 1.5s ease infinite alternate;
+            animation:animations 1.5s ease infinite alternate;
+        }
+        @-webkit-keyframes animations{
+            100%{-webkit-transform:translateY(40px);opacity:0;}
+        }
+        @-moz-keyframes animations{
+            100%{-moz-transform:translateY(40px);opacity:0;}
+        }
+        @-o-keyframes animations{
+            100%{-o-transform:translateY(40px);opacity:0;}
+        }
+        @-ms-keyframes animations{
+            100%{-ms-transform:translateY(40px);opacity:0;}
+        }
+
+.section2{
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    color: #666;
+    background: #e6e6e6;
+    padding-top: 50px;
+}
+.section2_cont{
+    width: 800px;
+    height: 220px;
+    background: #344860;
+    border-radius: 50px;
+    margin: 30px auto;
+
+}
+.section2_cont li{
+    display: block;
+    list-style: none;
+    width: 200px;
+    float: left;
+    padding-top: 20px;
+}
+.section2_cont .section2_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #ccc;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    transition:0.5s linear;
+}
+.section2_img img:nth-child(2){
+    opacity: 0;
+}
+.section2_img img{
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    position: absolute;
+    left: 0;
+    transition:0.5s linear;
+}
+.section2_cont .section2_img:hover{
+    background: #fff;
+}
+.section2_cont .section2_img:hover img:nth-child(2){
+    opacity: 1;
+}
+.section2_text{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 20px;
+    color: #fff;
+}
+.section2_text p{
+    text-align: right;
+}
+.section2_text p:before {
+    display: block;
+    content: "";
+    background: #ccc;
+    height: 2px;
+    width: 90px;
+    bottom: 25px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+.section2_bottom{
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+}
+.section2_bottom:before{
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 60px;
+    content: "";
+    border-top: 2px solid #666 ;
+    border-left: 2px solid #666;
+}
+.section2_bottom:after{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 60px;
+    content: "";
+    border-bottom: 2px solid #666 ;
+    border-right: 2px solid #666;
+}
+.section2_bottom p{
+    font-size: 14px;
+    line-height: 30px;
+    color: #000;
+}
+.section3{
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    color: #666;
+    padding-top: 50px;
+}
+.section3 .section3_cont{
+    width: 1100px;
+    height: 400px;
+    margin: 0 auto;
+}
+.section3_cont li{
+    list-style: none;
+    width: 250px;
+    float: left;
+    cursor: pointer;
+}
+.section3_cont li img{
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
+}
+.section3_cont .zx{
+    width: 30px;
+    height: 30px;
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    transform:rotate(180deg);
+    transition:.3s linear;
+}
+.section3_cont li:hover .zx{
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg);
+}
+.section3_cont li:hover .section3_text{
+    height: 120px;
+    padding: 10px;
+}
+.section3_cont .section3_text{
+    width: 280px;
+    height: 0px;
+    background: #344860;
+    padding: 0px 10px ;
+    margin-left: -40px;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition:.3s linear;
+}
+.section3_cont .section3_text li{
+    line-height: 25px;
+    width: 300px;
+    font-size: 14px;
+    list-style: disc;
+    list-style-position: inside;
+    text-align: left;
+    clear: both;
+    color: #fff;
+}
+
+.section4{
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    color: #666;
+    padding-top: 50px;
+   background: #ccc;
+}
+.section4 .demo{
+    width: 100%;
+    height: 150px;
+    margin: 60px auto;
+}
+.section4 .demo a{
+    display: inline-block;
+    width: 200px;
+    margin: 0px 25px;
+    transition:.3s linear;
+    position: relative;
+    overflow: hidden;
+}
+.section4 .demo a img{
+    width: 100%;
+    height:150px;
+    transition:.2s linear;
+}
+.section4 .demo a h3{
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: -30px;
+    transition:.2s linear;
+}
+.section4 .demo a:hover img{
+    -webkit-filter: grayscale(100%);
+}
+.section4 .demo a:hover h3{
+    top: 60px;
+}
+.section4 .demo a h3:hover{
+    color: #00bb9c;
+}
+.section4 .demo_text{
+    width: 750px;
+    margin: 0 auto;
+    padding-top: 30px;
+    line-height: 30px;
+    border-top: 2px solid #666;
+    color: #000;
+}
+.section5{
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    color: #666;
+    padding-top: 50px;
+}
+.section5_text{
+    color: #000;
+}
+.section5_text h2{
+    margin: 30px;
+    margin-top: 30px;
+}
+.section5_text p{
+    line-height: 30px;
+}
+.section5_img img{
+    width: 120px;
+    height: 120px;
+    margin: 30px 20px;
+}

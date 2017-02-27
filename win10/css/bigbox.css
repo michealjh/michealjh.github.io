@@ -1,0 +1,577 @@
+/*弹出的放大的文件夹*/
+#bigbox{
+	width: 60.4%;
+	height: 85.41%;
+	position: absolute;
+	top: 38px;
+	left: 121px;
+	border: 2px solid rgba(160,160,160,.3);
+	border-radius: 2px;
+	background: rgba(255,255,255,.6);
+	display: none;
+}
+/*顶部信息栏 电脑图标是背景图片*/
+#bheader{
+	width: 100%;
+	height: 73px;
+	background-color: rgba(232,232,232,.3);
+	border: 1px solid #a5a5a4;
+}
+#bhtop{
+	width: 100%;
+	height: 44px;
+	background: url(../img/big/top/commin.png) no-repeat;
+	background-size: 28px 24px;
+	background-position: 7px 10px;
+	cursor: pointer;
+}
+/*此电脑文字 左边的竖线就是边框*/
+#bhtop>span{
+	width: 43px;
+	height: 24px;
+	border-left: 1px solid #b9b9b7;
+	font: 14px/24px "微软雅黑";
+	padding-left: 15px;
+	color: #1c1c1c;
+	position: absolute;
+	left: 43px;
+	top: 10px;
+}
+/*右边三个开关*/
+#bhtop p{
+	width: 114px;
+	height: 24px;
+	position: absolute;
+	right: 20px;
+	top: 5px;
+}
+#bhtop p span{
+	font-size: 26px;
+	margin-right: 20px;
+	line-height: 20px;
+	height: 100%;
+}
+#bhtop p img{
+	margin-right: 20px;
+}
+#bhtop p i{
+	font-size: 21px;
+	font-weight: 800;
+	line-height: 24px;
+	cursor: pointer;
+}
+/*中间的信息栏 左边三个文字3个span*/
+#bhmid{
+	width: 100%;
+	height: 29px;
+	position: relative;
+}
+#htext{
+	position: absolute;
+	left: -1px;
+	top: 0;
+	width: 266px;
+	height: 30px;
+	line-height: 30px;
+}
+#htext span{
+	float: left;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 8px 26px;
+}
+#htext span.active{
+	background-color: #444444;
+	color: #fff;
+}
+/*中间的信息栏 右边的两个图标*/
+#hicon{
+	width: 40px;
+	height: 16px;
+	position: absolute;
+	right: 32px;
+	top: 3px;
+}
+#hicon i{
+	width: 7px;
+	height: 7px;
+	float: left;
+	border-left: 2px solid #727272;
+	border-bottom: 2px solid #727272;
+	transform: rotate(-45deg);
+}
+#hicon span{
+	width: 16px;
+	height: 16px;
+	float: right;
+	border-radius: 50%;
+	background-color: #6b6c6b;
+	color: #fff;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+}
+/*头部地址栏 左边的后退前进 向上按钮*/
+#bhbot{
+	width: 100%;
+	height: 51px;
+	background-color: rgba(170,170,170,.3);
+	border-bottom: 1px solid #a4a4a3;
+	position: relative;
+}
+#hbicon{
+	width: 124px;
+	height: 24px;
+	position: absolute;
+	left: 20px;
+	top: 13px;
+	text-align: center;
+}
+/*前进后退按钮*/
+#hbicon span{
+	width: 22px;
+	height: 22px;
+	border: 1px solid #676767;
+	border-radius: 50%;
+	font-size: 14px;
+	line-height: 22px;
+	color: #676767;
+	cursor: pointer;
+}
+#hbicon span:first-child{
+	margin-right: 20px;
+	
+}
+#hbicon span:hover{
+	background: rgba(255,0,0,.6);
+}
+/*下拉小三角*/
+#hbicon i{
+	border-top: 4px solid #62635f;
+	border-bottom: 4px solid rgba(255,255,255,0);
+	border-left: 4px solid rgba(255,255,255,0);
+	border-right: 4px solid rgba(255,255,255,0);
+	margin: 11px 20px 0 4px;
+}
+/*向上按钮*/
+#hbicon p{
+	width: 22px;
+	height: 22px;
+	border: 1px solid #646464;
+	border-radius: 1px;
+	text-align: center;
+	line-height: 22px;
+}
+#hbicon em{
+	float: left;
+	width: 8px;
+	height: 8px;
+	border-top: 2px solid #646464;
+	border-right: 2px solid #646464;
+	transform: rotate(135deg);
+	margin-left: 6px;
+	margin-top: 4px;
+}
+/*地址栏 图标 此电脑 刷新按钮*/
+#hbadd{
+	width: 68%;
+	height: 30px;
+	border: 1px solid #878787;
+	border-radius: 3px;
+	position: absolute;
+	left: 163px;
+	top: 9px;
+	background: #ededed url(../img/big/top/commin.png) no-repeat 7px 7px;
+	background-size: 20px 16px;
+	display: none;
+}
+/*地址栏小箭头图标*/
+#hbadd i{
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #7b7b7b;
+	border-right: 2px solid #7b7b7b;
+	transform: rotate(45deg);
+	margin: 10px 9px 0 36px;
+}
+#hbadd input{
+	width: 70%;
+	height: 30px;
+	background-color: rgba(0,0,0,0);
+}
+#hbadd p{
+	width: 30px;
+	height: 30px;
+	border-right: 1px solid #bebdbd;
+}
+#hbadd em{
+	width: 6px;
+	height: 6px;
+	border-right: 2px solid #7b7b7b;
+	border-bottom: 2px solid #7b7b7b;
+	transform: rotate(45deg);
+	margin: 10px 10px 0;
+}
+#hbadd b{
+	width: 36px;
+	height: 30px;
+	background: url(../img/big/top/break.png) no-repeat 10px 6px;
+}
+/*搜索框*/
+#hbsearch{
+	width: 240px;
+	height: 30px;
+	border: 1px solid #878787;
+	border-radius: 3px;
+	background: #ededed;
+	position: absolute;
+	right: 19px;
+	top: 9px;
+}
+#hbsearch input{
+	width: 203px;
+	height:30px;
+	background-color: rgba(0,0,0,0);
+	border-radius: 2px;
+	text-indent: 10px;
+}
+#hbsearch p{
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
+	background: url(../img/big/top/search.png) no-repeat 10px 6px;
+	padding: 6px 10px 7px;
+}
+/*文件夹主体内容*/
+#bcont{
+	width: 100%;
+	height: 84%;
+}
+
+/*文件夹主体内容左边内容lftcont 滚动条lftscroll*/
+#bclft{
+	width: 27%;
+	height: 100%;
+}
+#lftcont{
+	width: 95.83%;
+	height: 100%;
+	background-color: rgba(232,232,232,.3);
+	font-size: 14px;
+	font-color: #e8e8e8;
+}
+#lftcont dl{
+	width: 100%;
+}
+#lftcont dt{
+	width: 100%;
+	height: 36px;
+	text-indent: 54px;
+	line-height: 36px;
+}
+#lftcont dd{
+	width: 100%;
+	height: 32px;
+	margin-bottom: 3px;
+	background-size: 24px 24px;
+	text-indent: 88px;
+	line-height: 32px;
+}
+/*visit 快速访问*/
+#visit{
+	height: 261px;
+	margin-bottom: 3px;
+}
+#visit dt{
+	height: 46px;
+	background: url(../img/big/left/start.png) no-repeat 20px 11px;
+	background-size: 24px 24px;
+	line-height: 54px;
+	margin-bottom: 7px;
+}
+#visit dd:nth-of-type(1){
+	background: url(../img/big/left/desk.png) no-repeat 54px 4px;
+}
+#visit dd:nth-of-type(2){
+	background: url(../img/big/left/download.png) no-repeat 54px 4px;
+}
+#visit dd:nth-of-type(3){
+	background: url(../img/big/left/text.png) no-repeat 54px 4px;
+}
+#visit dd:nth-of-type(4){
+	background: url(../img/big/left/pictrue.png) no-repeat 54px 4px;
+}
+#visit dd:nth-of-type(5){
+	background: url(../img/big/left/2016.png) no-repeat 54px 4px;
+}
+#visit dd:nth-of-type(6){
+	background: url(../img/big/left/mydownload.png) no-repeat 54px 4px;
+}
+/*onedrive*/
+#onedrive{
+	height: 36px;
+	margin-bottom: 1px;
+}
+#onedrive dt{
+	background: url(../img/big/left/OneDrive.png) no-repeat 20px 7px;
+	background-size: 24px 20px;
+}
+
+/*此电脑*/
+#computer dt{
+	background: url(../img/big/left/com.png) no-repeat 20px 7px;
+	background-size: 24px 24px;
+}
+#computer dd{
+	margin-bottom: 4px;
+}
+#lftcont #computer dd:hover{
+	background-color: rgba(160,160,160,.4);
+}
+#computer dd:nth-of-type(1){
+	background: url(../img/big/left/video.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(2){
+	background: url(../img/big/left/pictrue.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(3){
+	background: url(../img/big/left/text.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(4){
+	background: url(../img/big/left/download.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(5){
+	background: url(../img/big/left/music.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(6){
+	background: url(../img/big/left/desk.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(7){
+	background: url(../img/big/left/C.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(8){
+	background: url(../img/big/left/D.png) no-repeat 54px 4px;
+}
+#computer dd:nth-of-type(9){
+	background: url(../img/big/cont/e.png) no-repeat 54px 4px;
+	background-size: 24px 24px;
+}
+/*滚动条*/
+#lftscroll{
+	width: 3.17%;
+	height: 100%;
+	background: rgba(85,85,85,.3);
+	position: relative;
+}
+#scrbox{
+	width: 94%;
+	height: 48px;
+	border: 1px solid rgba(50,50,50,.4);
+	background: rgba(255,255,255,.6);
+	position: absolute;
+	left: 0;
+	top: 50%;
+}
+/*右边内容*/
+#bcrgt{
+	width: 73%;
+	height: 100%;
+	position: relative;
+}
+/*上下结构的容器一样*/
+#bcrgt>div{
+	width: 100%;
+	height: 100%;
+	color: #080808;
+	font-size: 16px;
+}
+/*头部一样*/
+#bcrgt>div div:nth-of-type(1){
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 16px;
+}
+#bcrgt i{
+	width: 7px;
+    height: 7px;
+    float: left;
+    border-left: 2px solid #080808;
+    border-bottom: 2px solid #080808;
+    transform: rotate(-45deg);
+    margin: 4px 10px 0 20px;
+}
+#bcrgt em{
+	width: 817px;
+	height: 10px;
+	border-bottom: 2px solid rgba(100,100,100,.8);
+	margin-left: 10px;
+}
+/*内容一样的*/
+#bcrgt>div div:nth-of-type(2){
+	width: 95%;
+	height: 92%;
+	padding-left: 19px;
+}
+#bcrgt ul{
+	width: 100%;
+	height: 100%;
+}
+#bcrgt li{
+	float: left;
+	width: 173px;
+	height: 76px;
+	background-color: rgba(120,120,120,0);
+	line-height: 76px;
+	text-align: center;
+	margin-right: 6px;
+	margin-bottom: 10px;
+	position: relative;
+	border: 2px solid rgba(200,200,200,0);
+}
+#bcrgt li.active{
+	background-color: rgba(120,120,120,.3);
+	border: 2px solid rgba(200,200,200,.5);
+	border-radius: 2px;
+}
+/*文件夹(6)*/
+#bcrfol{
+	margin-left: 4px;
+}
+
+/*文件夹(6)内容*/
+
+#bcfc1 li:nth-of-type(1){
+	background-image: url(../img/big/cont/video.png);
+	background-repeat: no-repeat;
+	background-size: 41px 36px;
+	background-position: 20px 20px;
+}
+#bcfc1 li:nth-of-type(2){
+	background-image: url(../img/big/cont/pictrue.png);
+	background-repeat: no-repeat;
+	background-size: 41px 36px;
+	background-position: 20px 20px;
+}
+#bcfc1 li:nth-of-type(3){
+	background-image: url(../img/big/cont/text.png);
+	background-repeat: no-repeat;
+	background-size: 41px 36px;
+	background-position: 20px 20px;
+}
+#bcfc2 li:nth-of-type(1){
+	background-image: url(../img/big/cont/download.png);
+	background-repeat: no-repeat;
+	background-size: 41px 36px;
+	background-position: 20px 20px;
+}
+#bcfc2 li:nth-of-type(2){
+	background-image: url(../img/big/cont/music.png);
+	background-repeat: no-repeat;
+	background-size: 41px 36px;
+	background-position: 20px 20px;
+}
+#bcfc2 li:nth-of-type(3){
+	background-image: url(../img/big/cont/desk.png);
+	background-repeat: no-repeat;
+	background-size: 36px 36px;
+	background-position: 20px 20px;
+}
+/*设备和驱动器 bcrdisk */
+#bcrgt #bcdhead{
+	margin-bottom: 29px;
+}
+#bcdhead em{
+	width: 95%;
+}
+/*设备和驱动器 内容*/
+#bcdc1{
+	position: relative;
+}
+#bcdc1 li:nth-of-type(1){
+	background-image: url(../img/big/cont/C.png);
+	background-repeat: no-repeat;
+	background-size: 36px 36px;
+	background-position: 23px 22px;
+}
+#bcdc1 li:nth-of-type(2){
+	background-image: url(../img/big/cont/D.png);
+	background-repeat: no-repeat;
+	background-size: 36px 36px;
+	background-position: 23px 22px;
+}
+#bcdc1 li:nth-of-type(3){
+	background-image: url(../img/big/cont/e.png);
+	background-repeat: no-repeat;
+	background-size: 36px 36px;
+	background-position: 23px 22px;
+}
+#bcdc1 li{
+	width: 260px;
+	margin-right: 31px;
+}
+#bcdc1 p{
+	width: 160px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	position: absolute;
+	left: 69px;
+}
+#bcdc1 p:nth-of-type(1){
+	top: 7px;
+}
+#bcdc1 p:nth-of-type(2){
+	top: 52px;
+	color: #6a6a6a;
+}
+#bcdc1 img{
+	position: absolute;
+	left: 69px;
+	top: 32px;
+}
+#bcdc2 li{
+	float: left;
+	width: 173px;
+	height: 76px;
+	background-color: rgba(120,120,120,0);
+	margin-right: 6px;
+	margin-bottom: 10px;
+	border: 2px solid rgba(200,200,200,0);
+	position: relative;
+}
+#bcdc2 li.active{
+	background-color: rgba(120,120,120,.3);
+	border: 2px solid rgba(200,200,200,.5);
+	border-radius: 2px;
+}
+/*文件夹(6)*/
+#bcdc2{
+	margin: 38px 0 4px 0;
+}
+
+/*文件夹(6)内容*/
+#bcdc2 li{
+	float: left;
+	background-image: url(../img/big/cont/video.png);
+	background-repeat: no-repeat;
+	background-size: 41px 36px;
+	background-position: 20px 20px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#bcdc2 li p{
+    width: 97px;
+    margin-left: 66px;
+    font: 18px/38px '微软雅黑';
+    height: 40px;
+    margin-top: 20px;
+}
+#bcdc2 li input{
+    width: 76px;
+    height: 55px;
+    position: absolute;
+    left: 66px;
+    top: 10px;
+    display: none;
+}

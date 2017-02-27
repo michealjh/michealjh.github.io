@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>试验球动画</title>
+		<style>
+			@-webkit-keyframes orbloop {
+			  from {
+			    -webkit-transform: rotate(0deg);
+			  }
+			  to {
+			    -webkit-transform: rotate(360deg);
+			  }
+			}
+			@keyframes orbloop {
+			  from {
+			    transform: rotate(0deg);
+			  }
+			  to {
+			    transform: rotate(360deg);
+			  }
+			}
+			@-webkit-keyframes orbmove {
+			  from {
+			    -webkit-transform: translateX(0px);
+			  }
+			  to {
+			    -webkit-transform: translateX(-2000px);
+			  }
+			}
+			@keyframes orbmove {
+			  from {
+			    transform: translateX(0px);
+			  }
+			  to {
+			    transform: translateX(-2000px);
+			  }
+			}
+			#bg {
+			  position: absolute;
+			  width: 1000px;
+			  height: 1000px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: -500px;
+			  margin-top: -500px;
+			}
+			#bg div div {
+			  position: absolute;
+			}
+			#bg {
+			  opacity: 0;
+			}
+			#bg .row1 div {
+			  -webkit-animation: orbmove 48s linear infinite;
+			  animation: orbmove 96s linear infinite;
+			}
+			#bg .row1 .orb1 {
+			  position: absolute;
+			  width: 60px;
+			  height: 60px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: -30px;
+			  margin-top: -380px;
+			}
+			#bg .row1 .orb1 div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 60px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row1 .orb2 {
+			  position: absolute;
+			  width: 100px;
+			  height: 100px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 450px;
+			  margin-top: 50px;
+			}
+			#bg .row1 .orb2 div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 100px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row1 .orb1c {
+			  position: absolute;
+			  width: 60px;
+			  height: 60px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 1970px;
+			  margin-top: -380px;
+			}
+			#bg .row1 .orb1c div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 60px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row1 .orb2c {
+			  position: absolute;
+			  width: 100px;
+			  height: 100px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 2450px;
+			  margin-top: 50px;
+			}
+			#bg .row1 .orb2c div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 100px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row2 div {
+			  -webkit-animation: orbmove 24s linear infinite;
+			  animation: orbmove 48s linear infinite;
+			}
+			#bg .row2 .orb1 {
+			  position: absolute;
+			  width: 200px;
+			  height: 200px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: -500px;
+			  margin-top: -300px;
+			}
+			#bg .row2 .orb1 div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 200px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row2 .orb2 {
+			  position: absolute;
+			  width: 250px;
+			  height: 250px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 175px;
+			  margin-top: -125px;
+			}
+			#bg .row2 .orb2 div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 250px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row2 .orb1c {
+			  position: absolute;
+			  width: 200px;
+			  height: 200px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 1500px;
+			  margin-top: -300px;
+			}
+			#bg .row2 .orb1c div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 200px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row2 .orb2c {
+			  position: absolute;
+			  width: 400px;
+			  height: 400px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 2100px;
+			  margin-top: -200px;
+			}
+			#bg .row2 .orb2c div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 400px;
+			  background: -webkit-linear-gradient(top, #ffffff, #dedede);
+			  background: linear-gradient(to bottom, #ffffff, #dedede);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row3 div {
+			  -webkit-animation: orbmove 12s linear infinite;
+			  animation: orbmove 24s linear infinite;
+			}
+			#bg .row3 .orb1 {
+			  position: absolute;
+			  width: 300px;
+			  height: 300px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 850px;
+			  margin-top: -300px;
+			}
+			#bg .row3 .orb1 div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 300px;
+			  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+			  background: linear-gradient(to bottom, #dedede, #ffffff);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row3 .orb2 {
+			  position: absolute;
+			  width: 600px;
+			  height: 600px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 0px;
+			  margin-top: 0px;
+			}
+			#bg .row3 .orb2 div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 600px;
+			  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+			  background: linear-gradient(to bottom, #dedede, #ffffff);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row3 .orb1c {
+			  position: absolute;
+			  width: 300px;
+			  height: 300px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 2850px;
+			  margin-top: -300px;
+			}
+			#bg .row3 .orb1c div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 300px;
+			  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+			  background: linear-gradient(to bottom, #dedede, #ffffff);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+			#bg .row3 .orb2c {
+			  position: absolute;
+			  width: 600px;
+			  height: 600px;
+			  top: 50%;
+			  left: 50%;
+			  margin-left: 2000px;
+			  margin-top: 0px;
+			}
+			#bg .row3 .orb2c div {
+			  width: 100%;
+			  height: 100%;
+			  border-radius: 600px;
+			  background: -webkit-linear-gradient(top, #dedede, #ffffff);
+			  background: linear-gradient(to bottom, #dedede, #ffffff);
+			  -webkit-animation: orbloop 6s linear infinite;
+			  animation: orbloop 6s linear infinite;
+			}
+		</style>
+		<script>
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="bg" style="transform: translateX(-200px) translateY(300px) rotateZ(-60deg); opacity: 1;">
+		    <div class="row1">
+		        <div class="orb1"><div></div></div>
+		        <div class="orb2"><div></div></div>
+		        <div class="orb1c"><div></div></div>
+		        <div class="orb2c"><div></div></div>
+		    </div>
+		    <div class="row2">
+		        <div class="orb1"><div></div></div>
+		        <div class="orb2"><div></div></div>
+		        <div class="orb1c"><div></div></div>
+		        <div class="orb2c"><div></div></div>
+		    </div>
+		    <div class="row3">
+		        <div class="orb1"><div></div></div>
+		        <div class="orb2"><div></div></div>
+		        <div class="orb1c"><div></div></div>
+		        <div class="orb2c"><div></div></div>
+		    </div>
+		    <div class="row1c">
+		        <div class="orb1"><div></div></div>
+		        <div class="orb2"><div></div></div>
+		        <div class="orb1c"><div></div></div>
+		        <div class="orb2c"><div></div></div>
+		    </div>
+		    <div class="row2c">
+		        <div class="orb1"><div></div></div>
+		        <div class="orb2"><div></div></div>
+		        <div class="orb1c"><div></div></div>
+		        <div class="orb2c"><div></div></div>
+		    </div>
+		    <div class="row3c">
+		        <div class="orb1"><div></div></div>
+		        <div class="orb2"><div></div></div>
+		        <div class="orb1c"><div></div></div>
+		        <div class="orb2c"><div></div></div>
+		    </div>
+		</div>
+		
+	</body>
+</html>

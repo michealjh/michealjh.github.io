@@ -1,0 +1,11 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearFix:after{
+	content: "";
+	celar: both;
+	dispaly: block;
+}

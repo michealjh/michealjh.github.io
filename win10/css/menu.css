@@ -1,0 +1,110 @@
+/*右键菜单*/
+#menu{
+	position: absolute;
+	top: 20px;
+	right: 100px;
+	width: 316px;
+	/* height: 556px; */
+	border: 2px solid #999a9b;
+	border-radius: 2px;
+	background: rgba(255,255,255,.8);
+	padding-top: 5px;
+	display: none;
+}
+#menu li{
+	width: 100%;
+	height: 38px;
+	text-indent: 50px;
+	font: 14px/41px "微软雅黑";
+	font-weight: 600;
+	color: #676767;
+	position: relative;
+}
+#menu i{
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	transform: rotate(-46deg);
+	width: 8px;
+	height: 8px;
+	border-bottom: 2px solid #676767;
+	border-right: 2px solid #676767;
+}
+/*个性化上面覆盖的上传按钮*/
+#menu input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+#menu>li:nth-of-type(1){
+	background: url(../img/menu/check.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(2){
+	background: url(../img/menu/sort.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(3){
+	background: url(../img/menu/break.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(4){
+	background: url(../img/menu/paste.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(5){
+	background: url(../img/menu/pasteexe.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(6){
+	background: url(../img/menu/quash.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(7){
+	background: url(../img/menu/gitgui.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(8){
+	background: url(../img/menu/gitbash.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(9){
+	background: url(../img/menu/graph.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(10){
+	background: url(../img/menu/graph.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(11){
+	background: url(../img/menu/NVIDIA.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(12){
+	background: url(../img/menu/create.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(13){
+	background: url(../img/menu/monitors.png) no-repeat;
+	background-position: 20px 12px;
+}
+#menu>li:nth-of-type(14){
+	background: url(../img/menu/personal.png) no-repeat;
+	background-position: 20px 12px;
+}
+/* 2级菜单栏 */
+#menu ul{
+	position: absolute;
+	/* left: 310px;
+	top: 0px; */
+	width: 316px;
+	border: 2px solid #999a9b;
+	border-radius: 2px;
+	background: rgba(255,255,255,.8);
+	display: none;
+}
+

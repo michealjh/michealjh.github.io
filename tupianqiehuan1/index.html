@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	html{
+		height: 100%;
+	}
+	body{
+		height: 100%;
+		background: #000;
+		perspective:600px;
+		/* perspective-origin:50% 500px;  */
+		overflow: hidden;
+	}
+	#box{
+		transform-style:preserve-3d; 
+		width: 1900px;
+		height:250px;
+		margin: 0 auto;
+		position: absolute;
+		top:150px;
+		}
+	#box div{
+		transform-style:preserve-3d; 
+		width: 400px;
+		height: 250px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: 0.6s;
+		box-shadow: 0px 0px 20px 5px #000; 	
+	}
+	img{
+		transform-style:preserve-3d; 
+		width: 100%;
+		height: 100%;
+		-webkit-box-reflect: below 0px -webkit-linear-gradient(top,rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+		}
+	 .left{
+	 	 transform:translateZ(-100px) rotateY(20deg);  
+		
+		} 
+	.right{
+	 	 transform:translateZ(-100px) rotateY(-20deg);  
+		}
+	.idow{
+		 transform:translateZ(160px);
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div><img src="img/img1.jpg" alt=""></div>
+		<div><img src="img/img2.jpg" alt=""></div>
+		<div><img src="img/img3.jpg" alt=""></div>
+		<div><img src="img/img4.jpg" alt=""></div>
+		<div><img src="img/img5.jpg" alt=""></div>
+		<div><img src="img/img6.jpg" alt=""></div>
+		<div><img src="img/img7.jpg" alt=""></div>
+	</div>
+	<script>
+		var box = document.getElementById('box');
+		var divs = box.getElementsByTagName('div');
+		var idow = Math.round(divs.length/2)-1;
+		var boxl = (document.body.clientWidth/2-box.clientWidth/2);
+		console.log(boxl)
+		box.style.left = boxl+'px';
+		for(var i=0;i<divs.length;i++){
+			divs[i].index = i;
+			divs[i].style.left = i*250+'px';
+			if(i<idow){
+				divs[i].className = 'left';
+			}
+			if(i>idow){
+				divs[i].className = 'right';
+			}
+			divs[idow].className = 'idow';
+			divs[i].onclick = function(){
+				fn(this.index);
+			};
+		}
+
+		function fn(idow1){
+			for(var i=0;i<divs.length;i++){
+			divs[i].style.left = i*250+'px';
+			if(i<idow1){
+				divs[i].className = 'left';
+			}
+			if(i>idow1){
+				divs[i].className = 'right';
+			}
+			divs[i].style.left = idow*250 - (idow1-i)*250+ 'px';
+			divs[idow1].className = 'idow';
+			divs[idow1].style.left = idow*250+'px';
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>模拟win10</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/desktop.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/bigbox.css">
+	<link rel="stylesheet" type="text/css" href="css/taskbar.css">
+	<link rel="stylesheet" type="text/css" href="css/floder.css">
+	<link rel="stylesheet" type="text/css" href="css/calendar.css">
+	<link rel="stylesheet" type="text/css" href="css/music.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/tool.js"></script>
+	<script type="text/javascript" src="js/create.js"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+
+</head>
+<body>
+	<section id="main">
+		<div id="desktop">
+			<div id="introduction">
+				<i>x</i>
+				<h3>作品简介：请点击F11开启全屏模式</h3>
+				<p>该项目开发时间两周多，模拟win10的部分系统功能。并在原基础上做了展示修改！越做越觉得的里面的关联性很强，很有意思，很喜欢这种感觉</p>
+				<h3>主要实现的功能：</h3>
+				<ul>
+					<li>1.桌面图标的单选，多选(ctrl),框选，拖拽，模糊位置的吸附效果，图标重命名，删除，桌面刷新</li>
+					<li>2.此电脑可以双击打开，在磁盘中可以创建文件夹，删除文件夹，重命名</li>
+					<li>3.QQ音乐双击打开，里面的歌曲可以播放，并通过音频操作，获取音频节点，让音频在canvas上绘制出对应的波动</li>
+					<li>4.桌面图标扔到回收站里可以删除</li>
+					<li>5.右下角的时间是可以点击，做了一个日历，实时更新时间</li>
+					<li>6.桌面的时钟是canvas绘制出来的，根据当前的时间绘制，实时更新，可以拖拽</li>
+					<li>7.桌面、文件夹内容层级都是由虚拟数据生成、操作</li>
+					<li>8.桌面个性化可以根据本地图片换背景图片</li>
+				</ul>
+				<h3>运用的知识点</h3>
+				<p>面向对象、函数传参、DOM增删改、BOM右键自定义菜单、事件委托、碰撞检测、拖拽、ES6模板字符串、canvas绘图、HTML5音频audio等等，同时自己封装了好多方法，如数组去重等等</p>
+				<h3>项目不足</h3>
+				<p>由于时间较短，开发过程中并没有考虑兼容性问题，请使用高版本浏览器</p>
+				<p>点击右下角电脑图标可以查看此文档</p>
+			</div>
+			<canvas id="canvas" width="300" height="300"></canvas>
+			<ul id="deskicon"></ul>
+			<ul id="menu">
+				<!-- <li>
+					查看(V)
+					<i></i>
+					<ul>
+						<li>大图标(R)</li>
+						<li>中等图标(M)</li>
+						<li>小图标(N)</li>
+						<li>自动排列图标(A)</li>
+						<li>将图标与网格对齐(I)</li>
+						<li>显示桌面图标(D)</li>
+					</ul>
+				</li> -->
+				<!-- <li>
+					排序方式(O)
+					<i></i>
+					<ul>
+						<li>名称</li>
+						<li>大小</li>
+						<li>项目类型</li>
+						<li>修改时间</li>
+					</ul>
+				</li> -->
+				<li>
+					刷新(E)
+				</li>
+				<!-- <li>
+					粘贴(P)
+				</li>
+				<li>
+					粘贴快捷方式(S)
+				</li>
+				<li>
+					撤消重命名(U)
+					<span>Ctrl+Z</span>
+				</li>
+				<li>
+					Git GUI Here
+				</li>
+				<li>
+					Git Bash Here
+				</li>
+				<li>
+					图形属性......
+				</li> -->
+				<!-- <li>
+					图形选项
+					<i></i>
+					<ul>
+						<li>
+							快捷键
+							<i></i>
+						</li>
+						<li>
+							系统托盘图标
+							<i></i>
+						</li>
+						<li>
+							屏幕适配
+							<i></i>
+						</li>
+						<li>
+							分辨率
+							<i></i>
+						</li>
+						<li>
+							旋转
+							<i></i>
+						</li>
+						<li>
+							气球通知
+							<i></i>
+						</li>
+						<li>
+							配置式
+							<i></i>
+						</li>
+					</ul>
+				</li>
+				<li>
+					NVIDIA 控制面板
+				</li> -->
+				<li>
+					新建(W)
+					<i></i>
+					<ul>
+						<li id="cafloder">
+							文件夹(F)
+						</li>
+						<!-- <li>
+							快捷方式(S)
+						</li>
+						<li>
+							html
+						</li>
+						<li>
+							css
+						</li>
+						<li>
+							txt
+						</li> -->
+					</ul>
+				</li>
+				<!-- <li>
+					显示设置(D)
+				</li> -->
+				<li>
+					<input type="file" id="upload-bg">
+					个性化(R)
+				</li>
+			</ul>
+			<ul id="icmenu" class="samemenu">
+				<li id="dename">删除</li>
+				<li id="rename">重命名</li>
+			</ul>
+			<ul id="foldermenu" class="samemenu">
+				<li>新建</li>
+				<li>删除</li>
+				<li>重命名</li>
+			</ul>
+			<ul id="diskmenu"  class="samemenu">
+				<li>新建</li>
+				<li>删除</li>
+				<li>重命名</li>
+			</ul>
+			<div id="bigbox">
+				<div id="bheader">
+					<div id="bhtop">
+						<span>此电脑</span>
+						<p>
+							<span class="fl">-</span>
+							<img src="img/big/top/magnify.png" class="fl">
+							<i>×</i>
+						</p>
+					</div>
+					<!-- <div id="bhmid">
+						<div id="htext">
+							<span class="active">文件</span>
+							<span>计算机</span>
+							<span>查看</span>
+						</div>
+						<div id="hicon">
+							<i></i>
+							<span>?</span>
+						</div>			
+					</div> -->
+				</div>
+				<div id="bhbot">
+					<div id="hbicon">
+						<span class="fl"><</span>
+						<span class="fl">></span>
+						<i class="fl"></i>
+						<p class="fr">
+							<em></em>
+						</p>
+					</div>
+					<div id="hbadd">
+						<i class="fl"></i>
+						<input type="text" name="" class="fl" value="此电脑">
+						<p class="fl">
+							<em class="fl"></em>
+						</p>
+						<b class="fl"></b>
+					</div>
+					<!-- <div id="hbsearch">
+							<input type="text" class="fl" placeholder="搜索此电脑">
+							<p class="fl"></p>
+						</div> -->	
+				</div>
+				<div id="bcont">
+					<div id="bclft" class="fl">
+						<div id="lftcont" class="fl">
+							<!-- <dl id="visit">
+								<dt>快速访问</dt>
+								<dd>桌面</dd>
+								<dd>下载</dd>
+								<dd>文档</dd>
+								<dd>图片</dd>
+								<dd>2016-06-08作业</dd>
+								<dd>我的下载</dd>
+							</dl>
+							<dl id="onedrive">
+								<dt>OneDrive</dt>
+							</dl> -->
+							<dl id="computer">
+								<dt>此电脑</dt>
+								<dd>视频</dd>
+								<dd>图片</dd>
+								<dd>文档</dd>
+								<dd>下载</dd>
+								<dd>音乐</dd>
+								<dd>桌面</dd>
+								<dd>本地磁盘(C)</dd>
+								<dd>本地磁盘(D)</dd>
+								<dd>本地磁盘(E)</dd>
+							</dl>
+							<dl id="network"></dl>
+						</div>
+						<div id="lftscroll" class="fl">
+							<!-- <div id="scrbox"></div> -->
+						</div>
+					</div>
+					<div id="bcrgt" class="fl">
+						<!-- <div id="bcrfol">
+							<div id="bcfhead">
+								<i class="fl"></i>
+								<span class="fl">文件夹(6)</span>
+								<em class="fl"></em>
+							</div>
+							<div id="bcfcont">
+								<ul id="bcfc1">
+									<li class="active">视频</li>
+									<li>图片</li>
+									<li>文档</li>
+								</ul>
+								<ul id="bcfc2">
+									<li>下载</li>
+									<li class="active">音乐</li>
+									<li>桌面</li>
+								</ul>
+							</div>
+						</div> -->
+						<div id="bcrdisk">
+							<div id="bcdhead">
+								<i class="fl"></i>
+								<span class="fl">设备和驱动器(3)</span>
+								<em class="fl"></em>
+							</div>
+							<div id="bcdcont">
+								<ul id="bcdc1">
+									<!-- <li class="diskfile">
+										<p>本地磁盘(C:)</p>
+										<img src="img/big/bar.png">
+										<p>90.5GB可用，共118GB</p>
+									</li>
+									<li>
+										<p>本地磁盘(D:)</p>
+										<img src="img/big/bar.png">
+										<p>90.5GB可用，共118GB</p>
+									</li>
+									<li>
+										<p>本地磁盘(E:)</p>
+										<img src="img/big/bar.png">
+										<p>90.5GB可用，共118GB</p>
+									</li> -->
+								</ul>
+								<ul id="bcdc2"></ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="floderbox">
+				<div id="fdheader">
+					<div id="fhtop">
+						<span>文件夹</span>
+						<p>
+							<span class="fl">-</span>
+							<img src="img/big/top/magnify.png" class="fl">
+							<i>×</i>
+						</p>
+					</div>
+					<!-- <div id="fhmid">
+						<div id="ftext">
+							<span class="active">文件</span>
+							<span>计算机</span>
+							<span>查看</span>
+						</div>
+						<div id="ficon">
+							<i></i>
+							<span>?</span>
+						</div>			
+					</div> -->
+				</div>
+				<div id="fhbot">
+					<div id="fbicon">
+						<span class="fl"><</span>
+						<span class="fl">></span>
+						<i class="fl"></i>
+						<p class="fr">
+							<em></em>
+						</p>
+					</div>
+					<div id="fbadd">
+						<i class="fl"></i>
+						<input type="text" name="" class="fl" value="文件夹">
+						<p class="fl">
+							<em class="fl"></em>
+						</p>
+						<b class="fl"></b>
+					</div>
+					<!-- <div id="fbsearch">
+						<input type="text" class="fl" placeholder="搜索此电脑">
+						<p class="fl"></p>
+					</div>	 -->
+				</div>
+				<div id="fbcont">
+					<div id="fclft" class="fl">
+						<div id="flftcont" class="fl">
+							<!-- <dl id="fvisit">
+								<dt>快速访问</dt>
+								<dd>桌面</dd>
+								<dd>下载</dd>
+								<dd>文档</dd>
+								<dd>图片</dd>
+								<dd>2016-06-08作业</dd>
+								<dd>我的下载</dd>
+							</dl>
+							<dl id="fonedrive">
+								<dt>fonedrive</dt>
+							</dl> -->
+							<dl id="fcomputer">
+								<dt>此电脑</dt>
+								<dd>视频</dd>
+								<dd>图片</dd>
+								<dd>文档</dd>
+								<dd>下载</dd>
+								<dd>音乐</dd>
+								<dd>桌面</dd>
+								<dd>本地磁盘(C)</dd>
+								<dd>本地磁盘(D)</dd>
+								<dd>本地磁盘(E)</dd>
+							</dl>
+							<dl id="network"></dl>
+						</div>
+						<div id="flftscroll" class="fl">
+							<!-- <div id="flscrbox"></div> -->
+						</div>
+					</div>
+					<div id="fbcrgt" class="fl">
+						<div id="fbcrfol">
+							<div id="bcfhead">
+								<i class="fl"></i>
+								<span class="fl">文件夹()</span>
+								<em class="fl"></em>
+							</div>
+							<div id="fbcfcont">
+								<ul>
+									<!-- <li class="active">视频</li>
+									<li>图片</li>
+									<li>文档</li>
+									<li>下载</li>
+									<li class="active">音乐</li>
+									<li>桌面</li>
+									<li>下载</li>
+									<li class="active">音乐</li>
+									<li>桌面</li> -->
+								</ul>
+									
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div id="taskbar">
+			<div id="barstart" class="fl">
+				<img src="img/small/start.png">
+			</div>
+			<div id="taskview" class="fl">
+				<img src="img/small/taskview.png">
+				<div id="taskbox">
+					<ul>
+						<li>
+							<p>
+								<span>文件夹</span>
+								<i>×</i>
+							</p>
+							<div>
+								<img src="img/small/initialism.png">
+							</div>
+						</li>
+						<li>
+							<p>
+								<span>文件夹</span>
+								<i>×</i>
+							</p>
+							<div>
+								<img src="img/small/initialism.png">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<ul id="onetask" class="fl clearFix">
+				<li>
+					<img src="img/small/chrome.png">
+				</li>
+				<li>
+					<img src="img/small/taskfloder.png">
+				</li>
+			</ul>
+			<ul id="righttask" class="fr clearFix">
+				<li id="battery">
+					<img src="img/small/battery.png">
+				</li>
+				<li id="wifi">
+					<img src="img/small/wifi.png">
+				</li>
+				<li id="volume">
+					<img src="img/small/volume.png">
+				</li>
+				<li id="typewriting">
+					<img src="img/small/typewriting.png">
+				</li>
+				<li id="bartime">
+					<p class="time">11:29</p>
+					<p class="date">2016/11/12</p>
+				</li>
+			</ul>
+		</div>
+		<div id="qmusic">
+			<canvas width="1000" height="500" id="cans" style="background:#efe438"></canvas>
+			<div id="mclose">×</div>
+	    </div>
+	    <div id="brow">
+	    	<div>
+	    		<input type="text" value="http://browser.qq.com/" disabled/>
+				<i>x</i>
+	    	</div>
+			<iframe src="http://browser.qq.com/"></iframe>
+	    </div>
+	    
+	</section>
+ 	<section id="calendar">
+        <div id="mask"></div>
+        <div id="content">
+            <div id="time"><!-- 12:08:08 --></div>
+            <a href="javascript:;" id="date"><!-- 2016年7月3日,星期日--></a>
+            <div id="setDate">
+                <a href="javascript:;" id="upper"><!-- 2016年7月 --></a>
+                <p>
+                    <a href="javascript:;" id="prevMonth"><</a>
+                    <a href="javascript:;" id="nextMonth">></a>
+                </p>
+            </div>
+            <p id="weeks">
+                <a href="javascript:;">一</a>
+                <a href="javascript:;">二</a>
+                <a href="javascript:;">三</a>
+                <a href="javascript:;">四</a>
+                <a href="javascript:;">五</a>
+                <a href="javascript:;">六</a>
+                <a href="javascript:;">日</a>
+            </p>
+            <div id="everyDay">
+               
+            </div>
+        </div>
+        
+    </section>
+	
+	<div id="oBox"></div>
+	<script type="text/javascript">
+//桌面图标的数据
+		var filesData = [
+			{
+				id: 1,
+				PId: 0,
+				type: 'system',
+				text: '此电脑',
+				pic: 'com'
+			},
+			{
+				id: 2,
+				PId: 0,
+				type: 'exe',
+				text: 'QQ音乐',
+				pic: 'QQmusic'
+			},
+			{
+				id: 3,
+				PId: 0,
+				type: 'system',
+				text: '回收站',
+				pic: 'recycle'
+			},
+			{
+				id: 4,
+				PId: 0,
+				type: 'exe',
+				text: '浏览器',
+				pic: 'browser'
+			},
+			{
+				id: 5,
+				PId: 0,
+				type: 'folder',
+				text: '文件夹',
+				pic: 'folder'
+			},
+			{
+				id: 6,
+				PId: 0,
+				type: 'exe',
+				text: '腾讯视频',
+				pic: 'QQLive'
+			},
+			{
+				id: 7,
+				PId: 10,
+				type: 'folder',
+				text: '文件夹',
+				pic: 'folder'
+			},
+			{
+				id: 8,
+				PId: 2,
+				type: 'mp3',
+				text: '走在冷风中',
+				pic: 'wma',
+				src: 'music/走在冷风中.mp3'
+			},
+			{
+				id: 9,
+				PId: 2,
+				type: 'mp3',
+				text: '小幸运',
+				pic: 'wma',
+				src: 'music/小幸运.mp3'
+			},
+			{
+				id: 10,
+				PId: 2,
+				type: 'mp3',
+				text: '夜空中最亮星',
+				pic: 'wma',
+				src: 'music/夜空中最亮星.mp3'
+			},
+			{
+				id: 11,
+				PId: 2,
+				type: 'mp3',
+				text: 'Jar Of Love',
+				pic: 'wma',
+				src: 'music/Jar Of Love.mp3'
+			},
+			{
+				id: 12,
+				PId: 2,
+				type: 'mp3',
+				text: '演员',
+				pic: 'wma',
+				src: 'music/演员.mp3'
+			},
+			{
+				id: 13,
+				PId: 1,
+				type: 'disk',
+				text: '本地磁盘(C:)',
+				pic: 'C'
+			},
+			{
+				id: 14,
+				PId: 1,
+				type: 'disk',
+				text: '本地磁盘(D:)',
+				pic: 'D'
+			},
+			{
+				id: 15,
+				PId: 1,
+				type: 'disk',
+				text: '本地磁盘(E:)',
+				pic: 'e'
+			}
+		];
+//存最近的数据
+		var recentData = [];
+		var searchData = [];
+// 声明变量
+		var winWidth,winHeight;
+// 通过深入 Document 内部对 body 进行检测，获取窗口大小
+		if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth){
+			winHeight = document.documentElement.clientHeight;
+			winWidth = document.documentElement.clientWidth;
+		}
+//桌面图标定死的坐标的位置，帮助做吸附效果arr中arr[0]是left坐标,arr[1]是top坐标
+		var arr = [[],[]];
+		var lenx = Math.floor((winWidth-35)/128);
+		var leny = 7;
+		if( winHeight<700 ){
+			leny = 4;
+		} else if( winHeight<900 ){
+			leny = 5;
+		}
+		for( var i=0; i<leny; i++ ){
+			var y = i*130 + 30;
+			arr[1].push(y)
+		}
+		for( var j=0; j<lenx; j++ ){
+			var x = j*128 + 35;
+			arr[0].push(x);
+		}
+		var oMain = $('#main');
+		var oDesktop = $('#desktop');//桌面
+		var oDicon = $('#deskicon');//桌面图标的父级
+		var Dics = oDicon[0].getElementsByTagName('li');
+		var Fics = $('#fbcfcont')[0].getElementsByTagName('li');
+		var Dicks = $('#bcrgt')[0].getElementsByTagName('li');
+		var aDp = oDicon[0].getElementsByTagName('p');
+		var aDipt = oDicon[0].getElementsByTagName('input');
+		var oMenu = $('#menu');//右键菜单的父级
+		var goback = 0;
+		var len = filesData.length;
+		var menuNum = -1;//菜单栏
+		document.body.style.width = winWidth + 'px';
+		document.body.style.height = window.innerHeight + 'px';
+		var aPs = $('p',oMenu);//判断菜单栏是否有下拉栏
+		var aP = document.querySelectorAll('#menu>li>p');//菜单栏第一级的p
+		var oBox = document.getElementById('oBox');//框选的框子
+		var aMul = $('#menu>ul');
+		var oIcMu = $('#icmenu');//右键图标出来的菜单
+		var upback = [];
+//模拟的日历
+		var time = document.getElementById('time');
+        var date = document.getElementById('date');
+        var everyDay = document.getElementById('everyDay');
+        var upper = document.getElementById('upper');
+        var prevMonth = document.getElementById('prevMonth');
+        var nextMonth = document.getElementById('nextMonth');
+        init(time,date,upper,everyDay,prevMonth,nextMonth);
+		renderList(getChildren(0),oDicon[0]);//生成桌面图标
+		window.onresize = function(){
+			winHeight = document.documentElement.clientHeight;
+			winWidth = document.documentElement.clientWidth;
+			oMain.css({
+				width: winWidth,
+				height: winHeight
+			});
+		};
+		setTimeout(function(){
+			$('#introduction').fadeToggle();
+		},5000);
+	</script>
+	<script type="text/javascript" src="js/deskclick.js"></script>
+	<script type="text/javascript" src="js/clock.js"></script>
+</body>
+</html>
